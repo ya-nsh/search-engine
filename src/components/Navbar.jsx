@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { MdDarkMode, MdLightMode, MdOutlineDarkMode } from 'react-icons/md';
+import Search from './Search';
 
 function Navbar({ darkTheme, darkModeHandler }) {
   return (
@@ -61,25 +62,3 @@ function Navbar({ darkTheme, darkModeHandler }) {
 }
 
 export default Navbar;
-
-// {
-//   darkTheme ? (
-//     <div className="flex items-center gap-4">
-//       <a
-//         className="inline-block px-8 py-3 text-sm font-medium text-white transition bg-indigo-600 rounded hover:scale-110 hover:shadow-xl active:bg-indigo-500 focus:outline-none focus:ring"
-//         href="/"
-//       >
-//         <MdDarkMode />
-//       </a>
-//     </div>
-//   ) : (
-//     <div className="flex items-center gap-4">
-//       <a
-//         className="inline-block px-8 py-3 text-sm font-medium text-indigo-600 transition border border-current rounded hover:scale-110 hover:shadow-xl active:text-indigo-500 focus:outline-none focus:ring"
-//         href="/download"
-//       >
-//         <MdOutlineDarkMode />
-//       </a>
-//     </div>
-//   );
-// }
