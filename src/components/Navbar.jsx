@@ -20,7 +20,7 @@ function Navbar({ darkTheme, darkModeHandler }) {
               </Link>
             </div>
 
-            <div className="block">
+            {/* <div className="block">
               <nav aria-labelledby="header-navigation">
                 <ul className="flex items-center gap-6 text-sm">
                   <li>
@@ -35,7 +35,7 @@ function Navbar({ darkTheme, darkModeHandler }) {
                   </li>
                 </ul>
               </nav>
-            </div>
+            </div> */}
 
             <div className="flex items-center gap-4">
               <div className="sm:gap-4 sm:flex" onClick={darkModeHandler}>

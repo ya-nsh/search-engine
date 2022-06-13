@@ -25,4 +25,20 @@ export const ResultContextProvider = ({ children }) => {
     setResults(data);
     setLoading(false);
   };
+
+  return (
+    <ResultContext.Provider
+      value={{
+        results,
+        loading,
+        searchTerm,
+        setSearchTerm,
+        getResults
+      }}
+    >
+      {children}
+    </ResultContext.Provider>
+  );
 };
+
+export default ResultContext;
