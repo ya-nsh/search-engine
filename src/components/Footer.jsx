@@ -6,8 +6,8 @@ export default function Footer({ darkTheme }) {
   return (
     <footer
       className={`footer p-2  text-primary-content footer-center ${
-        darkTheme ? 'bg-black' : 'bg-gray-100'
-      }`}
+        darkTheme ? 'bg-black' : 'bg-white'
+      } border-t-2 border-black`}
     >
       <div className="flex flex-col items-center">
         <svg

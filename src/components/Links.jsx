@@ -1,6 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const links = [
   { url: '/search', text: '🔎 All' },
@@ -9,33 +8,30 @@ const links = [
   { url: '/video', text: '📺 Videos' }
 ];
 
-function Links() {
-  // const location = useLocation();
+function Links({ darkTheme }) {
+  const location = useLocation();
+  const navigate = useNavigate();
 
-  // const isActive = () => {
-  //   return location.pathname === links[0].url;
-  // };
-  let activeStyle = {
-    borderBottom: '2px solid #c74040',
-    color: '#db2f2f'
+  const pathMatchRoute = route => {
+    if (route === location.pathname) {
+      return true;
+    }
   };
-
-  // let activeClassName = 'underline';
-
-  let activeClassName =
-    'text-blue-700 border-b-2 dark:text-blue-300 border-blue-700 pb-2';
 
   return (
     <div className="flex sm:justify-around justify-between items-center mt-4 mb-2">
       {links.map(({ url, text }, index) => (
-        <NavLink
-          to={url}
-          // className={isActive ? activeClassName : ''}
-          style={({ isActive }) => (isActive ? activeStyle : undefined)}
+        <button
+          onClick={() => navigate(url)}
           key={index}
+          className={`${
+            darkTheme ? 'bg-black text-white' : 'bg-black text-white'
+          } ${pathMatchRoute(
+            `${url}` ? 'border-2 border-red' : ''
+          )} inline-block px-8 py-3 text-sm font-medium transition rounded-xl hover:scale-110 hover:shadow-xl active:bg-indigo-500 focus:outline-none focus:ring`}
         >
           {text}
-        </NavLink>
+        </button>
       ))}
     </div>
   );

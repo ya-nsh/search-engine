@@ -8,8 +8,12 @@ function Navbar({ darkTheme, darkModeHandler }) {
   const location = useLocation();
 
   return (
-    <div>
-      <header className={darkTheme ? 'bg-black' : 'bg-white'}>
+    <div className="">
+      <header
+        className={`${
+          darkTheme ? 'bg-black' : 'bg-white'
+        } border-b-2 border-black`}
+      >
         <div className="max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="md:flex md:items-center md:gap-12">
@@ -22,22 +26,6 @@ function Navbar({ darkTheme, darkModeHandler }) {
                 </span>
               </Link>
             </div>
-            {/* <div className="block">
-              <nav aria-labelledby="header-navigation">
-                <ul className="flex items-center gap-6 text-sm">
-                  <li>
-                    <Link
-                      className={`${
-                        darkTheme ? 'text-white' : 'text-black'
-                      }  text-xs transition hover:text-gray-500/75 `}
-                      to="/about"
-                    >
-                      ABOUT
-                    </Link>
-                  </li>
-                </ul>
-              </nav>
-            </div> */}
 
             <div className="flex items-center gap-4">
               <div className="sm:gap-4 sm:flex" onClick={darkModeHandler}>
@@ -61,7 +49,7 @@ function Navbar({ darkTheme, darkModeHandler }) {
       </header>
       {location.pathname !== '/' && (
         <div className="mt-4">
-          <Links />
+          <Links darkTheme={darkTheme} />
         </div>
       )}
     </div>
