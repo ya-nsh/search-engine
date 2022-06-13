@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { MdDarkMode, MdLightMode, MdOutlineDarkMode } from 'react-icons/md';
 import Search from './Search';
+import Links from './Links';
 
 function Navbar({ darkTheme, darkModeHandler }) {
   return (
@@ -19,7 +20,6 @@ function Navbar({ darkTheme, darkModeHandler }) {
                 </span>
               </Link>
             </div>
-
             {/* <div className="block">
               <nav aria-labelledby="header-navigation">
                 <ul className="flex items-center gap-6 text-sm">
@@ -57,6 +57,7 @@ function Navbar({ darkTheme, darkModeHandler }) {
           </div>
         </div>
       </header>
+      <Links />
     </div>
   );
 }
