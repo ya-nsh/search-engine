@@ -11,7 +11,7 @@ export const ResultContextProvider = ({ children }) => {
   const getResults = async type => {
     setLoading(true);
 
-    const response = await fetch(`baseUrl${type}`, {
+    const response = await fetch(`${baseUrl}${type}`, {
       method: 'GET',
       headers: {
         'X-User-Agent': 'desktop',

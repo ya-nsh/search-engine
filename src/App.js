@@ -1,14 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import Results from './components/Results';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Search from './components/Search';
 
 function App() {
   const [darkTheme, setDarkTheme] = useState(false);
+
+  useEffect(() => {
+    const localTheme = localStorage.getItem('darkTheme');
+
+    if (localTheme === 'true') {
+      setDarkTheme(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('darkTheme', darkTheme);
+  }, [darkTheme]);
 
   const darkModeHandler = () => {
     setDarkTheme(darkTheme => !darkTheme);
