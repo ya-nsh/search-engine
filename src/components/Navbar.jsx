@@ -1,10 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { MdDarkMode, MdLightMode, MdOutlineDarkMode } from 'react-icons/md';
 import Search from './Search';
 import Links from './Links';
 
 function Navbar({ darkTheme, darkModeHandler }) {
+  const location = useLocation();
+
   return (
     <div>
       <header className={darkTheme ? 'bg-black' : 'bg-white'}>
@@ -57,7 +59,11 @@ function Navbar({ darkTheme, darkModeHandler }) {
           </div>
         </div>
       </header>
-      <Links />
+      {location.pathname !== '/' && (
+        <div className="mt-4">
+          <Links />
+        </div>
+      )}
     </div>
   );
 }

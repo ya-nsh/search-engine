@@ -31,12 +31,10 @@ function App() {
         <Navbar darkModeHandler={darkModeHandler} darkTheme={darkTheme} />
         <Routes>
           <Route path="/" element={<Search darkTheme={darkTheme} />} />
-
-          <Route path="/search" element={<Results />} />
+          <Route path="/search" element={<Results darkTheme={darkTheme} />} />
           <Route path="/image" element={<Results />} />
           <Route path="/news" element={<Results />} />
           <Route path="/video" element={<Results />} />
-          <Route path="/about" element={<h1>About</h1>} />
         </Routes>
 
         <Footer darkTheme={darkTheme} />
